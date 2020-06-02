@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>403 Forbidden</title>
+</head>
+<body>
+
+<p>Directory access is forbidden.</p>
+
+</body>
+</html>
+CREATE TABLE `db27` (
+ `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+ `num` bigint(11) DEFAULT NULL,
+ `domain_name` varchar(100) DEFAULT NULL,
+ `query_time` varchar(100) DEFAULT NULL,
+ `create_date` varchar(100) DEFAULT NULL,
+ `update_date` varchar(100) DEFAULT NULL,
+ `expiry_date` varchar(100) DEFAULT NULL,
+ `domain_registrar_id` varchar(100) DEFAULT NULL,
+ `domain_registrar_name` varchar(100) DEFAULT NULL,
+ `domain_registrar_whois` varchar(100) DEFAULT NULL,
+ `domain_registrar_url` varchar(100) DEFAULT NULL,
+ `registrant_name` varchar(100) DEFAULT NULL,
+ `registrant_company` varchar(100) DEFAULT NULL,
+ `registrant_address` varchar(100) DEFAULT NULL,
+ `registrant_city` varchar(100) DEFAULT NULL,
+ `registrant_state` varchar(100) DEFAULT NULL,
+ `registrant_zip` varchar(100) DEFAULT NULL,
+ `registrant_country` varchar(100) DEFAULT NULL,
+ `registrant_email` varchar(100) DEFAULT NULL,
+ `registrant_phone` varchar(100) DEFAULT NULL,
+ `registrant_fax` varchar(100) DEFAULT NULL,
+ `administrative_name` varchar(100) DEFAULT NULL,
+ `administrative_company` varchar(100) DEFAULT NULL,
+ `administrative_address` varchar(100) DEFAULT NULL,
+ `administrative_city` varchar(100) DEFAULT NULL,
+ `administrative_state` varchar(100) DEFAULT NULL,
+ `administrative_zip` varchar(100) DEFAULT NULL,
+ `administrative_country` varchar(100) DEFAULT NULL,
+ `administrative_email` varchar(100) DEFAULT NULL,
+ `administrative_phone` varchar(100) DEFAULT NULL,
+ `administrative_fax` varchar(100) DEFAULT NULL,
+ `technical_name` varchar(100) DEFAULT NULL,
+ `technical_company` varchar(100) DEFAULT NULL,
+ `technical_address` varchar(100) DEFAULT NULL,
+ `technical_city` varchar(100) DEFAULT NULL,
+ `technical_state` varchar(100) DEFAULT NULL,
+ `technical_zip` varchar(100) DEFAULT NULL,
+ `technical_country` varchar(100) DEFAULT NULL,
+ `technical_email` varchar(100) DEFAULT NULL,
+ `technical_phone` varchar(100) DEFAULT NULL,
+ `technical_fax` varchar(100) DEFAULT NULL,
+ `billing_name` varchar(100) DEFAULT NULL,
+ `billing_company` varchar(100) DEFAULT NULL,
+ `billing_address` varchar(100) DEFAULT NULL,
+ `billing_city` varchar(100) DEFAULT NULL,
+ `billing_state` varchar(100) DEFAULT NULL,
+ `billing_zip` varchar(100) DEFAULT NULL,
+ `billing_country` varchar(100) DEFAULT NULL,
+ `billing_email` varchar(100) DEFAULT NULL,
+ `billing_phone` varchar(100) DEFAULT NULL,
+ `billing_fax` varchar(100) DEFAULT NULL,
+ `name_server_1` varchar(100) DEFAULT NULL,
+ `name_server_2` varchar(100) DEFAULT NULL,
+ `name_server_3` varchar(100) DEFAULT NULL,
+ `name_server_4` varchar(100) DEFAULT NULL,
+ `domain_status_1` varchar(100) DEFAULT NULL,
+ `domain_status_2` varchar(100) DEFAULT NULL,
+ `domain_status_3` varchar(100) DEFAULT NULL,
+ `domain_status_4` varchar(100) DEFAULT NULL,
+ `upload_at` timestamp NOT NULL DEFAULT current_timestamp(),
+ PRIMARY KEY (`id`),
+ UNIQUE KEY `domain_name` (`domain_name`)
+) ENGINE=MyISAM AUTO_INCREMENT DEFAULT CHARSET=latin1
