@@ -38,17 +38,16 @@ class Welcome extends CI_Controller {
 
 		$dir = __DIR__."/../../whoisfiles/";
 		$moveto = 'done/';
-		// echo $dir;
+		
 		$files = scandir($dir);
 		// $this->pre( $files ,39,false);
 
 		foreach($files as $file) {
 			if( is_file($dir.$file) && (get_mime_by_extension($dir.$file) == 'text/x-comma-separated-values') ) {
-				// echo get_mime_by_extension($dir.$file) == 'text/x-comma-separated-values';
-				// exit;
+				
 				$this->benchmark->mark('code_start');
 				$file_data = $this->csvimport->get_array($dir.$file);
-				// $this->pre( $file_data ,43,0);
+				
 				$this->benchmark->mark('code_db');
 				echo sizeof($file_data)."<br>";
 				$this->db->trans_off();

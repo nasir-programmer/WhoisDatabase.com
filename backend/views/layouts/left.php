@@ -35,6 +35,19 @@
                         ],
                         [ 'label' => 'Download', 'icon' => 'users', 'url' => ['/download'] ],
                         [ 'label' => 'LIVE Filter', 'icon' => 'users', 'url' => ['/db27'] ],
+                       
+                        [
+                            'label' => 'New Order',
+                            'icon' => 'users',
+                            'url' => '#',
+                            'items' => [
+                                ['label' => 'Linux VPS', 'icon' => 'circle-o', 'url' => ['/'],],
+                                ['label' => 'Windows VPS', 'icon' => 'circle-o', 'url' => ['/'],],
+                                ['label' => 'Container VPS', 'icon' => 'circle-o', 'url' => ['/'],],
+                                ['label' => 'Storage VPS', 'icon' => 'circle-o', 'url' => ['/'],],
+                                ['label' => 'DATABASE Subscription', 'icon' => 'circle-o', 'url' => ['/'],],
+                            ],
+                        ],
                         [
                             'label' => 'User',
                             'icon' => 'users',
