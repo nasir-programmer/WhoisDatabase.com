@@ -1,42 +1,37 @@
--- phpMyAdmin SQL Dump
--- version 4.9.0.1
--- https://www.phpmyadmin.net/
+-- MariaDB dump 10.17  Distrib 10.4.6-MariaDB, for Win64 (AMD64)
 --
--- Host: 127.0.0.1
--- Generation Time: Jun 03, 2020 at 01:01 PM
--- Server version: 10.4.6-MariaDB
--- PHP Version: 7.3.9
-
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
-START TRANSACTION;
-SET time_zone = "+00:00";
-
+-- Host: localhost    Database: db
+-- ------------------------------------------------------
+-- Server version	10.4.6-MariaDB
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
 /*!40101 SET NAMES utf8mb4 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Database: `db`
+-- Current Database: `db`
 --
-CREATE DATABASE IF NOT EXISTS `db` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+
+CREATE DATABASE /*!32312 IF NOT EXISTS*/ `db` /*!40100 DEFAULT CHARACTER SET latin1 */;
+
 USE `db`;
-
--- --------------------------------------------------------
 
 --
 -- Table structure for table `db27`
 --
--- Creation: Jun 01, 2020 at 03:12 PM
--- Last update: Jun 01, 2020 at 03:13 PM
--- Last check: Jun 02, 2020 at 09:04 AM
---
 
 DROP TABLE IF EXISTS `db27`;
-CREATE TABLE IF NOT EXISTS `db27` (
-  `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `db27` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `num` bigint(11) DEFAULT NULL,
   `domain_name` varchar(100) DEFAULT NULL,
   `query_time` varchar(100) DEFAULT NULL,
@@ -98,24 +93,27 @@ CREATE TABLE IF NOT EXISTS `db27` (
   `upload_at` timestamp NOT NULL DEFAULT current_timestamp(),
   PRIMARY KEY (`id`),
   UNIQUE KEY `domain_name` (`domain_name`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=Aria DEFAULT CHARSET=latin1 PAGE_CHECKSUM=1;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- RELATIONSHIPS FOR TABLE `db27`:
+-- Dumping data for table `db27`
 --
 
--- --------------------------------------------------------
+LOCK TABLES `db27` WRITE;
+/*!40000 ALTER TABLE `db27` DISABLE KEYS */;
+/*!40000 ALTER TABLE `db27` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `dbclean`
 --
--- Creation: Jun 01, 2020 at 04:17 PM
--- Last update: Jun 01, 2020 at 04:17 PM
---
 
 DROP TABLE IF EXISTS `dbclean`;
-CREATE TABLE IF NOT EXISTS `dbclean` (
-  `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `dbclean` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `num` bigint(11) DEFAULT NULL,
   `domain_name` varchar(100) DEFAULT NULL,
   `query_time` varchar(100) DEFAULT NULL,
@@ -160,23 +158,26 @@ CREATE TABLE IF NOT EXISTS `dbclean` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `domain_name` (`domain_name`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- RELATIONSHIPS FOR TABLE `dbclean`:
+-- Dumping data for table `dbclean`
 --
 
--- --------------------------------------------------------
+LOCK TABLES `dbclean` WRITE;
+/*!40000 ALTER TABLE `dbclean` DISABLE KEYS */;
+/*!40000 ALTER TABLE `dbclean` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `filtered`
 --
--- Creation: Jun 01, 2020 at 04:11 PM
--- Last update: Jun 01, 2020 at 04:11 PM
---
 
 DROP TABLE IF EXISTS `filtered`;
-CREATE TABLE IF NOT EXISTS `filtered` (
-  `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `filtered` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `num` tinyint(4) NOT NULL,
   `domain_name` tinyint(4) NOT NULL,
   `query_time` tinyint(4) NOT NULL,
@@ -237,23 +238,25 @@ CREATE TABLE IF NOT EXISTS `filtered` (
   `domain_status_4` tinyint(4) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- RELATIONSHIPS FOR TABLE `filtered`:
+-- Dumping data for table `filtered`
 --
 
--- --------------------------------------------------------
+LOCK TABLES `filtered` WRITE;
+/*!40000 ALTER TABLE `filtered` DISABLE KEYS */;
+/*!40000 ALTER TABLE `filtered` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `india`
 --
--- Creation: May 21, 2020 at 01:29 PM
--- Last update: May 21, 2020 at 01:29 PM
--- Last check: May 21, 2020 at 01:29 PM
---
 
 DROP TABLE IF EXISTS `india`;
-CREATE TABLE IF NOT EXISTS `india` (
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `india` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(30) NOT NULL,
   `email` varchar(56) NOT NULL,
@@ -263,21 +266,25 @@ CREATE TABLE IF NOT EXISTS `india` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `email` (`email`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- RELATIONSHIPS FOR TABLE `india`:
+-- Dumping data for table `india`
 --
 
--- --------------------------------------------------------
+LOCK TABLES `india` WRITE;
+/*!40000 ALTER TABLE `india` DISABLE KEYS */;
+/*!40000 ALTER TABLE `india` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `login_attempt`
 --
--- Creation: Jun 02, 2020 at 06:38 AM
---
 
 DROP TABLE IF EXISTS `login_attempt`;
-CREATE TABLE IF NOT EXISTS `login_attempt` (
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `login_attempt` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `key` varchar(255) NOT NULL,
   `amount` int(2) NOT NULL DEFAULT 1,
@@ -285,22 +292,27 @@ CREATE TABLE IF NOT EXISTS `login_attempt` (
   `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
   `updated_at` timestamp NULL DEFAULT NULL ON UPDATE current_timestamp(),
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- RELATIONSHIPS FOR TABLE `login_attempt`:
+-- Dumping data for table `login_attempt`
 --
 
--- --------------------------------------------------------
+LOCK TABLES `login_attempt` WRITE;
+/*!40000 ALTER TABLE `login_attempt` DISABLE KEYS */;
+INSERT INTO `login_attempt` VALUES (24,'2dd1be2d4c35cfc03c34e2dfc9a17f9107ed8467',1,'2020-06-02 06:52:27','2020-06-02 06:47:27','2020-06-02 06:47:27'),(26,'f76cc8c37b66a82d1a7c373a356f2e361c381f75',1,'2020-06-03 17:34:44','2020-06-03 17:29:44','2020-06-03 17:29:44'),(27,'2dd1be2d4c35cfc03c34e2dfc9a17f9107ed8467',1,'2020-06-06 02:56:52','2020-06-06 02:51:52','2020-06-06 02:51:52'),(29,'2dd1be2d4c35cfc03c34e2dfc9a17f9107ed8467',1,'2020-06-10 11:29:39','2020-06-10 11:24:39','2020-06-10 11:24:39'),(30,'0da837f9b162169222a713533e8bf52b6f34c4d2',2,'2020-06-10 11:29:55','2020-06-10 11:24:48','2020-06-10 11:24:55');
+/*!40000 ALTER TABLE `login_attempt` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `market`
 --
--- Creation: Oct 02, 2019 at 05:09 AM
---
 
 DROP TABLE IF EXISTS `market`;
-CREATE TABLE IF NOT EXISTS `market` (
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `market` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `o` int(11) NOT NULL,
   `h` int(11) NOT NULL,
@@ -309,42 +321,49 @@ CREATE TABLE IF NOT EXISTS `market` (
   `date` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- RELATIONSHIPS FOR TABLE `market`:
+-- Dumping data for table `market`
 --
 
--- --------------------------------------------------------
+LOCK TABLES `market` WRITE;
+/*!40000 ALTER TABLE `market` DISABLE KEYS */;
+/*!40000 ALTER TABLE `market` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `migration`
 --
--- Creation: Jun 02, 2020 at 06:37 AM
---
 
 DROP TABLE IF EXISTS `migration`;
-CREATE TABLE IF NOT EXISTS `migration` (
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `migration` (
   `version` varchar(180) NOT NULL,
   `apply_time` int(11) DEFAULT NULL,
   PRIMARY KEY (`version`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- RELATIONSHIPS FOR TABLE `migration`:
+-- Dumping data for table `migration`
 --
 
--- --------------------------------------------------------
+LOCK TABLES `migration` WRITE;
+/*!40000 ALTER TABLE `migration` DISABLE KEYS */;
+INSERT INTO `migration` VALUES ('m000000_000000_base',1591079855),('m130524_201442_init',1591079858),('m190124_110200_add_verification_token_column_to_user_table',1591079858);
+/*!40000 ALTER TABLE `migration` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `test`
 --
--- Creation: May 21, 2020 at 01:30 PM
--- Last update: May 21, 2020 at 01:30 PM
--- Last check: May 30, 2020 at 11:54 AM
---
 
 DROP TABLE IF EXISTS `test`;
-CREATE TABLE IF NOT EXISTS `test` (
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `test` (
   `num` int(11) NOT NULL,
   `domain_name` varchar(100) DEFAULT NULL,
   `query_time` varchar(100) DEFAULT NULL,
@@ -406,42 +425,49 @@ CREATE TABLE IF NOT EXISTS `test` (
   `upload_at` timestamp NOT NULL DEFAULT current_timestamp(),
   UNIQUE KEY `domain_name` (`domain_name`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- RELATIONSHIPS FOR TABLE `test`:
+-- Dumping data for table `test`
 --
 
--- --------------------------------------------------------
+LOCK TABLES `test` WRITE;
+/*!40000 ALTER TABLE `test` DISABLE KEYS */;
+/*!40000 ALTER TABLE `test` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `uniq`
 --
--- Creation: Oct 02, 2019 at 05:09 AM
--- Last update: Oct 02, 2019 at 05:09 AM
---
 
 DROP TABLE IF EXISTS `uniq`;
-CREATE TABLE IF NOT EXISTS `uniq` (
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `uniq` (
   `registrant_name` tinyint(4) NOT NULL,
   `registrant_email` tinyint(4) NOT NULL,
   `registrant_phone` tinyint(4) NOT NULL,
   `registrant_country` tinyint(4) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- RELATIONSHIPS FOR TABLE `uniq`:
+-- Dumping data for table `uniq`
 --
 
--- --------------------------------------------------------
+LOCK TABLES `uniq` WRITE;
+/*!40000 ALTER TABLE `uniq` DISABLE KEYS */;
+/*!40000 ALTER TABLE `uniq` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `user`
 --
--- Creation: Jun 02, 2020 at 06:37 AM
---
 
 DROP TABLE IF EXISTS `user`;
-CREATE TABLE IF NOT EXISTS `user` (
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `user` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `username` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `auth_key` varchar(32) COLLATE utf8_unicode_ci NOT NULL,
@@ -456,22 +482,27 @@ CREATE TABLE IF NOT EXISTS `user` (
   UNIQUE KEY `username` (`username`),
   UNIQUE KEY `email` (`email`),
   UNIQUE KEY `password_reset_token` (`password_reset_token`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- RELATIONSHIPS FOR TABLE `user`:
+-- Dumping data for table `user`
 --
 
--- --------------------------------------------------------
+LOCK TABLES `user` WRITE;
+/*!40000 ALTER TABLE `user` DISABLE KEYS */;
+INSERT INTO `user` VALUES (1,'nasiruddin@thriwe.com','I1RNkGjH61p7dewRGRNiRdWq34rWZgBC','$2y$13$YcX/KTe0V4v0bKrp7NB5FelIGsuKraXt87//xfyrSaRlm3EuFES5u',NULL,'nasiruddin@thriwe.com',10,'2020-06-06 08:27:48',NULL,1591412268);
+/*!40000 ALTER TABLE `user` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `useractivitylog`
 --
--- Creation: Jun 02, 2020 at 06:37 AM
---
 
 DROP TABLE IF EXISTS `useractivitylog`;
-CREATE TABLE IF NOT EXISTS `useractivitylog` (
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `useractivitylog` (
   `audit_entry_id` int(11) NOT NULL AUTO_INCREMENT,
   `audit_entry_timestamp` varchar(100) NOT NULL,
   `audit_entry_model_name` varchar(100) NOT NULL,
@@ -486,22 +517,26 @@ CREATE TABLE IF NOT EXISTS `useractivitylog` (
   KEY `audit_entry_user_id` (`audit_entry_user_id`),
   KEY `audit_entry_ip` (`audit_entry_ip`),
   KEY `audit_entry_model_name` (`audit_entry_model_name`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=59 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- RELATIONSHIPS FOR TABLE `useractivitylog`:
+-- Dumping data for table `useractivitylog`
 --
 
--- --------------------------------------------------------
+LOCK TABLES `useractivitylog` WRITE;
+/*!40000 ALTER TABLE `useractivitylog` DISABLE KEYS */;
+/*!40000 ALTER TABLE `useractivitylog` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `userauthlog`
 --
--- Creation: Jun 02, 2020 at 06:38 AM
---
 
 DROP TABLE IF EXISTS `userauthlog`;
-CREATE TABLE IF NOT EXISTS `userauthlog` (
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `userauthlog` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `userId` int(11) DEFAULT NULL,
   `username` varchar(255) NOT NULL,
@@ -517,77 +552,24 @@ CREATE TABLE IF NOT EXISTS `userauthlog` (
   `login` tinyint(1) NOT NULL DEFAULT 0,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- RELATIONSHIPS FOR TABLE `userauthlog`:
+-- Dumping data for table `userauthlog`
 --
 
+LOCK TABLES `userauthlog` WRITE;
+/*!40000 ALTER TABLE `userauthlog` DISABLE KEYS */;
+/*!40000 ALTER TABLE `userauthlog` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
---
--- Metadata
---
-USE `phpmyadmin`;
-
---
--- Metadata for table db27
---
-
---
--- Dumping data for table `pma__table_uiprefs`
---
-
-INSERT INTO `pma__table_uiprefs` (`username`, `db_name`, `table_name`, `prefs`, `last_update`) VALUES
-('root', 'db', 'db27', '{\"sorted_col\":\"`db27`.`query_time`  DESC\"}', '2020-06-01 17:14:16');
-
---
--- Metadata for table dbclean
---
-
---
--- Metadata for table filtered
---
-
---
--- Metadata for table india
---
-
---
--- Metadata for table login_attempt
---
-
---
--- Metadata for table market
---
-
---
--- Metadata for table migration
---
-
---
--- Metadata for table test
---
-
---
--- Metadata for table uniq
---
-
---
--- Metadata for table user
---
-
---
--- Metadata for table useractivitylog
---
-
---
--- Metadata for table userauthlog
---
-
---
--- Metadata for database db
---
-COMMIT;
-
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2020-06-10 23:08:29

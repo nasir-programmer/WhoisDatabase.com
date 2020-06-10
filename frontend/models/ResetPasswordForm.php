@@ -44,9 +44,9 @@ class ResetPasswordForm extends Model
     {
         return [
             ['password', 'required'],
-            ['password', 'string', 'min' => 8],
-            ['password', 'match', 'pattern' => '/^.*(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).*$/', 'message' => 'New password must contain at least one lower and upper case character and a digit.'],
-            ['password', 'checkSixtyDaysOld']
+            // ['password', 'string', 'min' => 8],
+            // ['password', 'match', 'pattern' => '/^.*(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).*$/', 'message' => 'New password must contain at least one lower and upper case character and a digit.'],
+            // ['password', 'checkSixtyDaysOld']
         ];
     }
 

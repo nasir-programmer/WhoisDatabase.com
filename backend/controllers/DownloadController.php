@@ -4,9 +4,34 @@ namespace backend\controllers;
 use  \yii\helpers\BaseFileHelper as FILE;
 use yii\helpers\Html;
 use yii\helpers\Url;
+use yii\web\NotFoundHttpException;
+use yii\filters\VerbFilter;
 
 class DownloadController extends \yii\web\Controller
 {
+    public function behaviors()
+    {
+        $_permission = ['index','download','update'];
+
+        return [
+            'access' => [
+                'class' => \yii\filters\AccessControl::className(),
+                'rules' => [
+                    [
+                        'actions' => $_permission,
+                        'allow' => true,
+                        'roles' => ['@'],
+                    ],
+                ],
+            ],
+            'verbs' => [
+                'class' => VerbFilter::className(),
+                'actions' => [
+                    'delete' => ['POST'],
+                ],
+            ],
+        ];
+    }
 
     public function actionDownload()
     {
@@ -35,9 +60,10 @@ class DownloadController extends \yii\web\Controller
             $nameFicheiro = substr($file, strrpos($file, '/') + 1);
             $data[] =[
                 'path' => FILE::normalizePath($file),
-                'name' => basename($file),
+                'name' => basename($file)
                 ];
-        }   
+        }
+        // array_multisort($volume, SORT_DESC, $edition, SORT_ASC, $data);
        
         return $this->render('index', [
             'model' => $data,

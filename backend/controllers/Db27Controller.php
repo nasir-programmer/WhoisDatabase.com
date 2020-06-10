@@ -8,6 +8,7 @@ use backend\models\Db27Search;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+
 // use yii2tech\csvgrid\CsvGrid;
 // use yii\data\ActiveDataProvider;
 
@@ -21,7 +22,19 @@ class Db27Controller extends Controller
      */
     public function behaviors()
     {
+        $_permission = ['index','view'];
+
         return [
+            'access' => [
+                'class' => \yii\filters\AccessControl::className(),
+                'rules' => [
+                    [
+                        'actions' => $_permission,
+                        'allow' => true,
+                        'roles' => ['@'],
+                    ],
+                ],
+            ],
             'verbs' => [
                 'class' => VerbFilter::className(),
                 'actions' => [

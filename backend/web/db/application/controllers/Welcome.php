@@ -1,6 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 ini_set('max_execution_time', '0');
+ini_set('memory_limit','5000M');
 class Welcome extends CI_Controller {
 
 	/**
@@ -18,6 +19,10 @@ class Welcome extends CI_Controller {
 	 * map to /index.php/welcome/<method_name>
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
+	public function __construct(){
+		parent::__construct();
+		$this->load->database();
+	}
 	public function index()
 	{
 		$this->load->view('welcome_message');
@@ -31,10 +36,35 @@ class Welcome extends CI_Controller {
 		}
 	}
 
+	public function timeencode(){
+// 		$date = '25/05/2010';
+// $date = str_replace('/', '-', $date);
+// echo date('Y-m-d', strtotime($date));
+		$this->benchmark->mark('code_db');
+				// echo sizeof($file_data)."<br>";
+				$this->db->trans_off();
+				$this->db->trans_start();
+
+		$query = $this->db->select(['id', 'query_time','create_date','update_date','expiry_date','upload_at'])->get('db27'); 
+		foreach ($query->result() as $row)
+		{
+			$this->db->update('db27', [
+				'upload_at' => strtotime($row->upload_at),
+				'create_date'=> strtotime($row->create_date),
+				'update_date'=> strtotime($row->update_date),
+				'expiry_date'=> strtotime($row->expiry_date),
+
+			], ['id' => $row->id]);
+		}
+		$this->db->trans_complete();
+		$this->benchmark->mark('code_end');
+		echo "<br>DB Updation Time:- ".$this->benchmark->elapsed_time('code_db', 'code_end');
+	}
+
 	public function scan(){
 		$this->load->helper('file');
 		$this->load->library('csvimport');
-		$this->load->database();
+		
 
 		$dir = __DIR__."/../../whoisfiles/";
 		$moveto = 'done/';
