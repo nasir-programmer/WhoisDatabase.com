@@ -54,8 +54,9 @@ class DownloadController extends \yii\web\Controller
         $dir = __DIR__."/../web/db/whoisfiles/";
         $moveto = 'done/';
         $data = [];
-        $files = FILE::findFiles($dir,['only'=>['*.zip'],'recursive' => false]);
-      
+        $files = FILE::findFiles($dir,['only'=>['*.zip'],'recursive' => false]); 
+        rsort($files);
+    
         foreach($files as $file) {
             $nameFicheiro = substr($file, strrpos($file, '/') + 1);
             $data[] =[

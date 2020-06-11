@@ -28,7 +28,7 @@ class UserAuthLog extends \yii\db\ActiveRecord
      */
     public static function tableName()
     {
-        return 'UserAuthLog';
+        return 'userauthlog';
     }
 
     /**
